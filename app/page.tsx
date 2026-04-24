@@ -9,7 +9,7 @@ import StartScreen from "@/components/StartScreen";
 type Screen = "start" | "loading" | "result";
 export type Gender = "male" | "female" | "other";
 
-const LOADING_DURATION_MS = 3200;
+const LOADING_DURATION_MS = 7000;
 
 export default function Home() {
   const [screen, setScreen] = useState<Screen>("start");

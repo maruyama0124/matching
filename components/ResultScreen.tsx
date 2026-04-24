@@ -177,20 +177,6 @@ export default function ResultScreen({ gender, onRematch, onReset }: Props) {
             </p>
           )}
 
-          {/* 777 リール (小さめ) */}
-          <div className="mb-5 flex justify-center gap-1.5">
-            {[0, 1, 2].map((i) => (
-              <div
-                key={i}
-                className="flex h-12 w-10 items-center justify-center rounded-md border-2 border-gold bg-gradient-to-b from-pachiRed via-pachiRed-dark to-pachiBlack shadow-neon sm:h-14 sm:w-12"
-              >
-                <span className="text-gold-metallic text-2xl font-black sm:text-3xl">
-                  7
-                </span>
-              </div>
-            ))}
-          </div>
-
           {/* お相手カード */}
           <a
             href={INSTAGRAM_PROFILE_URL}
