@@ -1,6 +1,7 @@
-// Instagram アプリが入っていればアプリで DM 画面が開く公式ディープリンク
-// アプリ未インストール環境ではブラウザの Instagram にフォールバック
-export const INSTAGRAM_DM_URL = "https://ig.me/m/ryoyadaze";
+// Instagram プロフィールへのディープリンク
+// アプリがあればアプリで開き、プロフィール画面の「メッセージ」ボタンから DM へ
+// (ig.me/m/... は PC 未ログイン時にエラー画面になるため、プロフィール経由を採用)
+export const INSTAGRAM_DM_URL = "https://ig.me/ryoyadaze";
 
 // プロフィールへのリンク（アイコン等からプロフィールへ遷移させる用途）
 export const INSTAGRAM_PROFILE_URL =
