@@ -67,9 +67,6 @@ export default function StartScreen({ onMatch }: Props) {
             マッチングアプリ
           </span>
         </h1>
-        <div className="mx-auto mt-3 inline-block rounded-full bg-pachiRed px-4 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(230,0,18,0.8)]">
-          🎰 FEVER 🎰
-        </div>
         <p className="mt-4 text-sm font-black text-gold-light">
           恋人探しでも、友達探しにも。
         </p>

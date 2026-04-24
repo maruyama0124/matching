@@ -159,7 +159,7 @@ export default function ResultScreen({ gender, onRematch, onReset }: Props) {
 
           {/* 大当たり タイトル (極太明朝 炎グラデ + ゴールド影) */}
           <h2 className="animate-jackpot-bounce my-4 text-center text-6xl leading-none sm:text-7xl">
-            <FieryMinchoTitle text="大当たり！" offset={6} />
+            <FieryMinchoTitle text="激アツ！！" offset={6} />
           </h2>
 
           {/* サブタイトル (明朝で統一感) */}
