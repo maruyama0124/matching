@@ -1,0 +1,445 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-gakushuin: #004831;
+  --color-gakushuin-deep: #005a3c;
+  --color-gold: #ffd700;
+  --color-gold-dark: #ffb800;
+  --color-red: #e60012;
+  --color-pachi-black: #0b0b0f;
+  --color-text: #1a1a1a;
+  --color-text-sub: #6b6b6b;
+}
+
+html,
+body {
+  background-color: var(--color-pachi-black);
+  color: #ffffff;
+  font-feature-settings: "palt";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ========== 金属ゴールドテキスト ========== */
+.text-gold-metallic {
+  background: linear-gradient(
+    180deg,
+    #fff5a3 0%,
+    #ffd700 25%,
+    #ffb800 50%,
+    #b8860b 75%,
+    #fff5a3 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.8))
+    drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+}
+
+.text-outlined-red {
+  -webkit-text-stroke: 2px #e60012;
+  text-shadow:
+    0 0 10px rgba(255, 215, 0, 0.8),
+    0 0 20px rgba(230, 0, 18, 0.6);
+}
+
+/* ========== マーキーの走る光 ========== */
+@keyframes marquee-lights {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 10px currentColor;
+  }
+  50% {
+    opacity: 0.15;
+    box-shadow: none;
+  }
+}
+
+/* ========== ゴールドの脈動 ========== */
+@keyframes gold-pulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.8))
+      drop-shadow(0 0 16px rgba(255, 215, 0, 0.6));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(255, 215, 0, 1))
+      drop-shadow(0 0 32px rgba(255, 184, 0, 0.8))
+      drop-shadow(0 0 48px rgba(230, 0, 18, 0.6));
+  }
+}
+
+/* ========== 大当たりタイトル跳ね ========== */
+@keyframes jackpot-bounce {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+/* ========== 画面振動 ========== */
+@keyframes shake {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-3px, 2px);
+  }
+  40% {
+    transform: translate(3px, -2px);
+  }
+  60% {
+    transform: translate(-2px, -3px);
+  }
+  80% {
+    transform: translate(2px, 3px);
+  }
+}
+
+/* ========== 放射状の光バースト ========== */
+@keyframes radial-burst {
+  0% {
+    transform: scale(0.8) rotate(0deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.3) rotate(360deg);
+    opacity: 0.2;
+  }
+}
+
+/* ========== ネオンボーダー点滅 ========== */
+@keyframes neon-border {
+  0%,
+  100% {
+    box-shadow:
+      0 0 20px rgba(255, 215, 0, 0.6),
+      0 0 40px rgba(230, 0, 18, 0.4),
+      inset 0 0 10px rgba(255, 215, 0, 0.3);
+  }
+  50% {
+    box-shadow:
+      0 0 40px rgba(255, 215, 0, 1),
+      0 0 80px rgba(230, 0, 18, 0.8),
+      inset 0 0 20px rgba(255, 215, 0, 0.6);
+  }
+}
+
+/* ========== シンボル高速切替 ========== */
+@keyframes symbol-cycle {
+  0% {
+    content: "7";
+  }
+  10% {
+    content: "★";
+  }
+  20% {
+    content: "♥";
+  }
+  30% {
+    content: "◆";
+  }
+  40% {
+    content: "♣";
+  }
+  50% {
+    content: "♠";
+  }
+  60% {
+    content: "◎";
+  }
+  70% {
+    content: "☆";
+  }
+  80% {
+    content: "♪";
+  }
+  90% {
+    content: "✿";
+  }
+}
+
+/* ========== リール固定 (着地) ========== */
+@keyframes lock-in {
+  0% {
+    transform: scale(1.3);
+    filter: brightness(1.5);
+  }
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+/* ========== 紙吹雪 ========== */
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-20vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(120vh) rotate(1080deg);
+    opacity: 0;
+  }
+}
+
+/* ========== 走光(稲妻的) ========== */
+@keyframes slash-flash {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+}
+
+/* ========== 既存ローディングドット(互換維持) ========== */
+@keyframes dot-fade {
+  0%,
+  80%,
+  100% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+.loading-dot {
+  animation: dot-fade 1.4s ease-in-out infinite both;
+}
+
+.loading-dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.loading-dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+/* ========== スピン中シンボル (JS から使用) ========== */
+.spinning-symbol {
+  animation: symbol-cycle 0.8s steps(10) infinite;
+}
+
+/* ========== 放射状背景 (パチンコ台中央の集中線) ========== */
+.radial-rays {
+  background-image: repeating-conic-gradient(
+    from 0deg,
+    rgba(255, 215, 0, 0.15) 0deg 6deg,
+    transparent 6deg 12deg
+  );
+}
+
+/* ========== パチンコ筐体グラデ背景 ========== */
+.pachinko-bg {
+  background:
+    radial-gradient(
+      ellipse at top,
+      rgba(230, 0, 18, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at bottom,
+      rgba(255, 215, 0, 0.1) 0%,
+      transparent 50%
+    ),
+    #0b0b0f;
+}
+
+/* ========== 大当たり爆発背景 (参考画像の多色バースト) ========== */
+.explosion-bg {
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 250, 200, 1) 0%,
+      rgba(255, 210, 100, 0.95) 8%,
+      rgba(255, 140, 30, 0.9) 22%,
+      rgba(220, 60, 30, 0.8) 38%,
+      rgba(150, 20, 100, 0.75) 58%,
+      rgba(70, 15, 90, 0.85) 78%,
+      rgba(15, 5, 30, 1) 100%
+    );
+}
+
+/* ========== 集中線 (中央から放射状) ========== */
+.burst-lines {
+  background-image: repeating-conic-gradient(
+    from 0deg at 50% 50%,
+    rgba(255, 255, 255, 0.35) 0deg 1.5deg,
+    transparent 1.5deg 5deg
+  );
+  mix-blend-mode: screen;
+}
+
+/* ========== 光線 (斜め走光) ========== */
+@keyframes light-beam-sweep {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translateX(-8%);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateX(8%);
+  }
+}
+
+.light-beam {
+  position: absolute;
+  left: -50%;
+  width: 200%;
+  height: 28px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 220, 0.1) 20%,
+    rgba(255, 255, 220, 0.95) 50%,
+    rgba(255, 255, 220, 0.1) 80%,
+    transparent 100%
+  );
+  filter: blur(6px);
+  animation: light-beam-sweep 2.2s ease-in-out infinite;
+  mix-blend-mode: screen;
+}
+
+/* ========== 火の粉 (下から上に舞い上がる) ========== */
+@keyframes ember-rise {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(var(--ember-dx, 0px), -120%) scale(0.2);
+    opacity: 0;
+  }
+}
+
+.ember {
+  position: absolute;
+  bottom: -8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    #ffffff 0%,
+    #ffe070 30%,
+    #ff8a20 60%,
+    rgba(255, 50, 0, 0) 85%
+  );
+  box-shadow:
+    0 0 8px rgba(255, 200, 80, 0.9),
+    0 0 14px rgba(255, 120, 20, 0.6);
+  animation: ember-rise var(--ember-dur, 3s) linear infinite;
+  animation-delay: var(--ember-delay, 0s);
+  mix-blend-mode: screen;
+}
+
+/* ========== 極太明朝 炎グラデ文字 (参考: 激アツ!!) ==========
+   Kaisei Tokumin (徳大明朝) は横線も太い Extra Bold Serif で、
+   パチンコの "極太明朝" に最も近い Google Font。
+   黒背景でも縁が潰れないよう、グラデ下端は暗赤にせず明るさを保ち、
+   炎色の外周ハローで背景から浮かせる。 */
+.text-fire-mincho {
+  font-family: var(--font-kaisei-tokumin), var(--font-noto-serif-jp), serif;
+  font-weight: 800;
+  color: transparent;
+  background: linear-gradient(
+    180deg,
+    #fffacc 0%,
+    #ffe46a 18%,
+    #ffb12a 40%,
+    #ff7e1a 62%,
+    #ff3e0a 85%,
+    #ff6a0a 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 2.5px #1a0500;
+  letter-spacing: -0.02em;
+  filter: drop-shadow(0 0 10px rgba(255, 150, 40, 0.55))
+    drop-shadow(0 0 22px rgba(255, 110, 20, 0.35));
+}
+
+/* 極太明朝 ゴールド影レイヤー (炎明朝の背後に置いてズラす) */
+.text-mincho-gold-back {
+  font-family: var(--font-kaisei-tokumin), var(--font-noto-serif-jp), serif;
+  font-weight: 800;
+  color: #ffc93a;
+  -webkit-text-stroke: 3px #1a0a00;
+  filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.85))
+    drop-shadow(0 0 8px rgba(255, 180, 40, 0.4));
+  letter-spacing: -0.02em;
+}
+
+/* ========== 3D メタリックゴールド (重厚・大当たりタイトル) ========== */
+.text-3d-gold {
+  background: linear-gradient(
+    180deg,
+    #fff8c4 0%,
+    #ffe680 18%,
+    #ffb800 42%,
+    #c88200 55%,
+    #8b5a00 72%,
+    #d4a017 88%,
+    #fff8c4 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.5px #2a1000;
+  filter: drop-shadow(2px 2px 0 #2a1000)
+    drop-shadow(4px 4px 0 #2a1000)
+    drop-shadow(0 0 20px rgba(255, 200, 0, 0.95))
+    drop-shadow(0 0 40px rgba(255, 100, 0, 0.7));
+  letter-spacing: -0.02em;
+}
+
+/* ========== 中央の白熱コア (タイトル背後に置くハロー) ========== */
+@keyframes core-glow {
+  0%,
+  100% {
+    opacity: 0.65;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+}
+
+.burst-core {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 70%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 240, 0.9) 0%,
+    rgba(255, 220, 120, 0.5) 30%,
+    rgba(255, 140, 30, 0.2) 60%,
+    transparent 80%
+  );
+  filter: blur(4px);
+  animation: core-glow 1.4s ease-in-out infinite;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
