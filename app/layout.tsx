@@ -5,6 +5,7 @@ import {
   Noto_Sans_JP,
   Noto_Serif_JP,
 } from "next/font/google";
+import Script from "next/script";
 import { SITE_DESCRIPTION, SITE_TITLE } from "@/lib/constants";
 import "./globals.css";
 
@@ -62,7 +63,14 @@ export default function RootLayout({
       lang="ja"
       className={`${notoSansJP.variable} ${notoSerifJP.variable} ${kaiseiTokumin.variable} ${inter.variable}`}
     >
-      <body className="pachinko-bg min-h-screen font-sans">{children}</body>
+      <body className="pachinko-bg min-h-screen font-sans">
+        {children}
+        <Script
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          strategy="afterInteractive"
+          data-cf-beacon='{"token": "30fdfccb2226446c9622a88734fb072d"}'
+        />
+      </body>
     </html>
   );
 }
