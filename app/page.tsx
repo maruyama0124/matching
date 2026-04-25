@@ -21,6 +21,13 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, [screen]);
 
+  // 画面遷移を URL に反映 (Cloudflare Web Analytics でファネル計測するため)
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const url = screen === "start" ? "/" : `/?screen=${screen}`;
+    window.history.pushState(null, "", url);
+  }, [screen]);
+
   const handleMatch = (selected: Gender) => {
     setGender(selected);
     setScreen("loading");
